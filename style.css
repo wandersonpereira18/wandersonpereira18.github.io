@@ -1,0 +1,302 @@
+/* Reset de estilos padrões */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Corpo da página com fundo inspirado no Power BI */
+body {
+  background: url('https://img.icons8.com/?size=512&id=qYfwpsRXEcpc&format=png') no-repeat center center fixed;
+  background-size: 300px;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Container centralizado */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Fundo semitransparente */
+  border-radius: 8px;
+}
+
+/* Cabeçalho com estilo Power BI */
+header {
+  background-color: #f4c542;
+  /* Azul escuro de fallback */
+  background-image: url('6.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+header h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+header p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Seções com fundo semitransparente */
+section {
+  margin: 30px 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Títulos das seções */
+h2 {
+  color: #f4c542;
+  /* Amarelo do Power BI */
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Listas sem marcadores */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Experiência profissional */
+.job {
+  margin-bottom: 20px;
+}
+
+/* Rodapé com estilo Power BI */
+footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Azul escuro */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  border-radius: 0 0 8px 8px;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.section-title img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f4c542;
+}
+
+.powerbi {
+  color: #121212;
+  font-weight: bold;
+}
+
+/* Tema escuro */
+.tema-escuro {
+  background-color: #121212;
+  color: #f4f4f4;
+}
+
+.tema-escuro header {
+  background-color: #0d47a1;
+}
+
+.tema-escuro footer {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+#botao-tema {
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #f4c542;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+ul li:hover,
+p:hover {
+  background-color: #f4c542;
+  color: #000;
+  transition: all 0.3s ease;
+  padding-left: 10px;
+  border-radius: 5px;
+  cursor: default;
+}
+
+h2:hover,
+h3:hover {
+  color: #f4c542;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+/* botão baixa PDF PCD */
+.download-inline-btn {
+  margin-left: 20px;
+  padding: 4px 10px;
+  background-color: #f4c542;
+  color: #000;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.download-inline-btn:hover {
+  background-color: #d9ac00;
+  color: #fff;
+}
+
+#btn-topo {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #f4c542;
+  color: #000;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#btn-topo:hover {
+  background-color: #e3b933;
+}
+
+/* botão baixa curri */
+.btn-curriculo {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #f4c542;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-curriculo:hover {
+  background-color: #e3b933;
+  color: #000;
+}
+
+header {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  /* Ajuste conforme necessário */
+}
+
+.carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.carousel-images {
+  display: flex;
+  animation: slide 30s linear infinite;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  /* Transparência */
+  transition: opacity 0.3s ease;
+}
+
+.carousel-images img:hover {
+  opacity: 1;
+  /* Opacidade total ao passar o mouse */
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-600%);
+  }
+}
+
+/* carrossel*/
+.carrossel {
+  width: 100vw;
+  /* ocupa toda a largura da tela */
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0;
+  /* opcional: remove arredondamento nas bordas */
+  position: relative;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  /* ou use uma unidade relativa, como vh */
+}
+
+.carrossel {
+  width: 100vw;
+  /* ocupa toda a largura da tela */
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0;
+  /* opcional: remove arredondamento nas bordas */
+  position: relative;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-img.active {
+  opacity: 0.8;
+  /* leve transparência */
+  z-index: 1;
+}

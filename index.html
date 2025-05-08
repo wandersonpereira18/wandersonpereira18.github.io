@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Wanderson Pereira</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<script>
+    function alternarTema() {
+        document.body.classList.toggle("tema-escuro");
+
+        const botao = document.getElementById("botao-tema");
+        if (document.body.classList.contains("tema-escuro")) {
+            botao.innerText = "Tema Claro";
+        } else {
+            botao.innerText = "Tema Escuro";
+        }
+    }
+</script>
+<button onclick="voltarAoTopo()" id="btn-topo" title="Voltar ao topo">↑</button>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Wanderson Pereira do Nascimento</h1>
+            <p>Profissional de Tecnologia | Analista de Dados <span class="powerbi">"Power BI"</span></p>
+            <button onclick="alternarTema()" id="botao-tema">Alternar Tema</button>
+        </div>
+    </header>
+
+
+    <section class="info">
+        <div class="container">
+            <div class="section-title">
+                <h2>Informações Pessoais</h2>
+                <img src="wanderso2.png" alt="Foto de perfil de Wanderson Pereira">
+            </div>
+            <ul>
+                <li><strong>Endereço:</strong> QNJ 52 Casa 37, Taguatinga Norte – Brasília-DF, CEP 72.140-520</li>
+                <li><strong>Email:</strong> wandersonpereira18@gmail.com</li>
+                <li><strong>Telefone:</strong> (61) 9 9133-3574</li>
+                <li><strong>Nacionalidade:</strong> Brasileiro</li>
+                <li>
+                    <strong>PCD: S68.1 </strong>(Amputação Traumática do Dedo)
+                    <a href="LAUDO PCD.pdf" download id="download-inline-btn" class="download-inline-btn">Baixar
+                        LAUDO</a>
+                </li>
+            </ul>
+
+        </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <h2>Competências Técnicas</h2>
+            <ul>
+                <li>Análise de Dados e Soluções Tecnológicas</li>
+                <li>Excel Avançado e Relatórios Gerenciais</li>
+                <li>Power BI – Dashboards Interativos</li>
+                <li>HTML5, CSS, JavaScript</li>
+                <li>Python – Automação de Tarefas</li>
+                <li>Comunicação Interpessoal e Trabalho em Equipe</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="experience">
+        <div class="container">
+            <h2>Experiência Profissional</h2>
+            <div class="job">
+                <h3>Softplan – Analista de Dados Jr (2025)</h3>
+                <p>Responsável pela criação de relatórios automatizados usando MySQL e BigQuery, apoiando decisões
+                    estratégicas do setor de estratégia.</p>
+            </div>
+            <div class="job">
+                <h3>Fóton Informática – Analista Power BI (2024)</h3>
+                <p>Coleta, análise e visualização de dados usando DAX no Power BI.</p>
+            </div>
+            <div class="job">
+                <h3>Central IT – Analista de Dados (2023)</h3>
+                <p>Criação de planilhas operacionais, automações com Python e dashboards em Power BI.</p>
+            </div>
+            <div class="job">
+                <h3>Prefeitura de Parnarama – Motorista (2021)</h3>
+                <p>Condução segura, manutenção básica de veículos e leitura de rotas com GPS.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="education">
+        <div class="container">
+            <h2>Formação Acadêmica</h2>
+            <ul>
+                <li><strong>Engenharia de Software</strong> – Centro Universitário UDF, conclusão prevista: 2027</li>
+                <li><strong>Curso de Power BI</strong> – Xperiun, 2024</li>
+                <li><strong>Ensino Médio</strong> – Centro de Ensino 06 Gama, 2009</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="extra">
+        <div class="container">
+            <h2>Diferenciais</h2>
+            <p>Profissional dinâmico, com foco em soluções, aprendizado contínuo e boa comunicação. Experiência em
+                Analista de Dados, RH,
+                logística, suporte técnico e operações administrativas.</p>
+            <p>Responsável por implantar o Power BI em setores estratégicos, reduzindo tempo de análise e aumentando a
+                confiabilidade dos dados.</p>
+        </div>
+    </section>
+
+    <footer>
+        <footer>
+            <p>&copy; 2025 Wanderson Pereira. Todos os direitos reservados.</p>
+            <a href="curriculo.WPN.pdf" download class="btn-curriculo">📄 Baixar Currículo</a>
+        </footer>
+
+    </footer>
+</body>
+
+</html>
+
+<script>
+    document.getElementById("download-inline-btn").addEventListener("click", function () {
+        alert("O download do LAUDO será iniciado!");
+    });
+
+    // Exibe o botão quando o usuário rola 300px
+    window.onscroll = function () {
+        const botao = document.getElementById("btn-topo");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            botao.style.display = "block";
+        } else {
+            botao.style.display = "none";
+        }
+    };
+
+    // Função para voltar ao topo suavemente
+    function voltarAoTopo() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    document.querySelector('.btn-curriculo').addEventListener('click', function () {
+        alert('O download do currículo será iniciado!');
+    });
+</script>
+
+<script>
+    const imagens = document.querySelectorAll('.carousel-img');
+    let indiceAtual = 0;
+
+    function trocarImagem() {
+        imagens[indiceAtual].classList.remove('active');
+        indiceAtual = (indiceAtual + 1) % imagens.length;
+        imagens[indiceAtual].classList.add('active');
+    }
+
+    setInterval(trocarImagem, 3000); // troca a cada 3 segundos
+</script>
