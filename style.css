@@ -101,13 +101,40 @@ footer {
   margin-bottom: 15px;
 }
 
-.section-title img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #f4c542;
+.section-content {
+  position: relative;
+  z-index: 1;
 }
+
+.text-content {
+  position: relative;
+  z-index: 3;
+  /* texto na frente */
+  color: white;
+}
+
+.image-content {
+  position: absolute;
+  top: -50px;
+  /* imagem sobe mais */
+  right: 20px;
+  z-index: 2;
+  /* atrás do texto */
+  opacity: 0.8;
+  /* mais visível */
+  pointer-events: none;
+}
+
+.image-content img {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  /* sombra leve para destaque */
+}
+
 
 .powerbi {
   color: #121212;
