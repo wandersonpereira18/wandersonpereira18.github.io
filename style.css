@@ -8,10 +8,35 @@
 
 /* Corpo da página com fundo inspirado no Power BI */
 body {
-  background: url('https://img.icons8.com/?size=512&id=qYfwpsRXEcpc&format=png') no-repeat center center fixed;
-  background-size: 300px;
-  color: #fff;
+  background-color: #111723;
+  /* cor de fundo fixa */
+  color: #f5f5f5;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.fundo-dinamico {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* centraliza */
+  width: 400px;
+  height: 400px;
+  background: url('sem_fundo.png') no-repeat center center;
+  background-size: contain;
+  z-index: -1;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.fundo-dinamico.transparent {
+  opacity: 0;
 }
 
 /* Container centralizado */
@@ -20,20 +45,21 @@ body {
   max-width: 1000px;
   margin: auto;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
+
   /* Fundo semitransparente */
   border-radius: 8px;
 }
 
 /* Cabeçalho com estilo Power BI */
 header {
-  background-color: #f4c542;
+  background-color: rgba(0, 0, 0, 0);
   /* Azul escuro de fallback */
-  background-image: url('6.jpg');
+  background-image: url('comente\ a\ logo.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgba(0, 0, 0, 0);
   padding: 40px 0;
   text-align: center;
   border-radius: 8px 8px 0 0;
@@ -52,8 +78,7 @@ header p {
 /* Seções com fundo semitransparente */
 section {
   margin: 30px 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0) border-radius: 8px;
   padding: 20px;
 }
 
@@ -74,7 +99,7 @@ ul {
 
 ul li {
   padding: 8px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #rbga(0, 0, 0, 0.1);
 }
 
 /* Experiência profissional */
@@ -84,14 +109,53 @@ ul li {
 
 /* Rodapé com estilo Power BI */
 footer {
-  background-color: rgba(0, 0, 0, 0.6);
-  /* Azul escuro */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Azul escuro com transparência */
   color: white;
   text-align: center;
   padding: 20px 0;
   margin-top: 30px;
   border-radius: 0 0 8px 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  /* Espaço entre os elementos */
 }
+
+footer a {
+  color: white;
+  text-decoration: none;
+  margin: 5px 0;
+  /* Espaço vertical adicional */
+  display: inline-flex;
+  align-items: center;
+}
+
+footer a img {
+  margin-right: 8px;
+}
+
+footer .btn-curriculo {
+  background-color: #f4c542;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+footer .btn-curriculo:hover {
+  background-color: #f4c542;
+}
+
+/* Aplica estilo apenas aos links comuns no rodapé (exceto o botão) */
+footer a:not(.btn-curriculo):hover {
+  color: #f4c542;
+  /* Amarelo Power BI */
+  transition: color 0.3s;
+}
+
 
 .section-title {
   display: flex;
@@ -122,7 +186,7 @@ footer {
   /* atrás do texto */
   opacity: 0.8;
   /* mais visível */
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 .image-content img {
@@ -131,8 +195,8 @@ footer {
   border-radius: 10px;
   object-fit: contain;
   background: transparent;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-  /* sombra leve para destaque */
+  box-shadow: 0 0 12px rgba(0, 0, 0, )
+    /* sombra leve para destaque */
 }
 
 
@@ -141,42 +205,19 @@ footer {
   font-weight: bold;
 }
 
-/* Tema escuro */
-.tema-escuro {
-  background-color: #121212;
-  color: #f4f4f4;
-}
-
-.tema-escuro header {
-  background-color: #0d47a1;
-}
-
-.tema-escuro footer {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-#botao-tema {
-  margin-top: 10px;
-  padding: 8px 16px;
-  font-size: 14px;
-  background-color: #f4c542;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
 ul li:hover,
 p:hover {
-  background-color: #f4c542;
-  color: #000;
+  color: #f4c542;
+  /* Deixa o texto amarelo */
   transition: all 0.3s ease;
-  padding-left: 10px;
-  border-radius: 5px;
+  /* Animação suave */
   cursor: default;
+  /* Cursor normal */
 }
 
 h2:hover,
-h3:hover {
+h3:hover,
+h4:hover {
   color: #f4c542;
   transform: scale(1.05);
   transition: all 0.3s ease;
@@ -238,6 +279,7 @@ h3:hover {
 .btn-curriculo:hover {
   background-color: #e3b933;
   color: #000;
+  cursor: pointer;
 }
 
 header {
@@ -247,83 +289,52 @@ header {
   /* Ajuste conforme necessário */
 }
 
-.carousel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.carousel-images {
-  display: flex;
-  animation: slide 30s linear infinite;
-}
-
-.carousel-images img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-  /* Transparência */
-  transition: opacity 0.3s ease;
-}
-
-.carousel-images img:hover {
-  opacity: 1;
-  /* Opacidade total ao passar o mouse */
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-600%);
-  }
-}
-
-/* carrossel*/
-.carrossel {
-  width: 100vw;
-  /* ocupa toda a largura da tela */
+body {
+  background-color: #111723;
+  /* Azul escuro sofisticado */
+  color: #f5f5f5;
+  /* Texto claro para contraste */
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
   margin: 0;
-  overflow: hidden;
-  border-radius: 0;
-  /* opcional: remove arredondamento nas bordas */
+  padding: 0;
+}
+
+body {
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE/Edge */
+  user-select: none;
+  /* Padrão */
+}
+
+.container {
   position: relative;
+  /* Para que o vídeo seja posicionado dentro dela */
 }
 
-.carousel-container {
+.container {
   position: relative;
-  width: 100%;
-  height: 400px;
-  /* ou use uma unidade relativa, como vh */
-}
-
-.carrossel {
-  width: 100vw;
-  /* ocupa toda a largura da tela */
-  margin: 0;
-  overflow: hidden;
-  border-radius: 0;
-  /* opcional: remove arredondamento nas bordas */
-  position: relative;
-}
-
-.carousel-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.carousel-img.active {
-  opacity: 0.8;
-  /* leve transparência */
+  /* Importante para posicionamento interno */
   z-index: 1;
+  /* Garante que o conteúdo fique acima do vídeo */
+}
+
+.corner-video {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  background-color: #111723;
+  /* Cor de fundo igual à página */
+  opacity: 0.9;
+  z-index: -1;
+  /* Fica por trás dos textos */
+  pointer-events: none;
+  /* Não interfere com cliques */
 }
